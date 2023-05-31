@@ -9,7 +9,7 @@ We train an education tutoring chatbot, Spock, on Llama-13B + Vicuna-13B weights
 To train the chatbot, we create a synthetic dataset of mock conversations between a student and a tutor based on learning science principles like scaffolding.
 We employed a specialized [prompt](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/prompts/conversation_gen/v3.txt) to generate these mock conversations using OpenAI's GPT-4 APIs.
 
-###Inference
+### Inference
 To use the model, first install the [fastchat](https://github.com/lm-sys/FastChat/) library, and then follow the steps here:
 1. Use the [apply_delta.py](https://github.com/lm-sys/FastChat/blob/main/fastchat/model/apply_delta.py) on [Spock-Bio-Llama-Diff](https://huggingface.co/luffycodes/tutorbot-spock-bio-llama-diff)  to get actual Spock weights.
 2. Update the [inference.py](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/fastchat/inference.py) from our repository in the FastChat folder.
