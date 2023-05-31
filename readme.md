@@ -18,7 +18,7 @@ To use the model, first install the [fastchat](https://github.com/lm-sys/FastCha
 
 ### Training
 1. Run the [create_dataset_spock.py](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/fastchat/training/create_dataset_spock.py) to create the training dataset with mock conversations in FastChat Vicuna format.
-2. Using the training instructions from FastChat library.
+2. Use the training instructions from [fastchat](https://github.com/lm-sys/FastChat/) library.
 
 If you use this work, please cite:
 CLASS Meet SPOCK: An Education Tutoring Chatbot based on Learning Science Principles
