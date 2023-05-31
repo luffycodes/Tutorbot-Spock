@@ -16,6 +16,9 @@ To use the model, first install the [fastchat](https://github.com/lm-sys/FastCha
 3. Update the [conversation.py](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/fastchat/conversation.py) from our repository in the FastChat folder.
 4. Build a [biology index](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/book_index_retrieval/build_index.py) with [OpenStax Biology 2e](https://openstax.org/details/books/biology-2e) textbook. Put the generated ```os_bio_2e_index.faiss``` and the [openstax_biology_2e.csv](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/book_index_retrieval/openstax_biology_2e.csv)  in same folder as inference.py i.e. ```FastChat/fastchat``` folder.
 
+### Training
+1. Run the [create_dataset_spock.py](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/fastchat/training/create_dataset_spock.py) to create the training dataset with mock conversations in FastChat Vicuna format.
+2. Using the training instructions from FastChat library.
 
 If you use this work, please cite:
 CLASS Meet SPOCK: An Education Tutoring Chatbot based on Learning Science Principles
