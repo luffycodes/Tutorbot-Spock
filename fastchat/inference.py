@@ -61,10 +61,10 @@ def get_relevant_para(prompt):
     if loc == -1:
         return prompt
 
-    dataframe = pd.read_csv('/home/ss164/bot/build_index/biology_2e.csv')
+    dataframe = pd.read_csv('biology_2e.csv')
     dataframe = dataframe[dataframe['p_id'].str.startswith('fs-').fillna(False)]
     paragraphs = dataframe['p_content'].tolist()
-    index = faiss.read_index('/home/ss164/bot/build_index/paragraph_index.faiss')
+    index = faiss.read_index('paragraph_index.faiss')
 
     tokenizer = AutoTokenizer.from_pretrained('sentence-transformers/all-MiniLM-L6-v2')
     model = AutoModel.from_pretrained('sentence-transformers/all-MiniLM-L6-v2')
