@@ -1,0 +1,19 @@
+Generate a hard, challenging problem which can be broken down into subproblems for the following section on {section_name} whose learning objective is: {section_learning_objs}. For the generated main problem for this learning objective, also output the following:
+1) Facts necessary to answer it,
+2) Subproblems that the main problem can be broken down into, and
+3) The final answer.
+For each subproblem, generate a hint, one incorrect student response to the subproblem, and corresponding feedback to the student. Put all the output in the following JSON structure:
+{{
+    "Problem": "..",
+    "SubProblems": [
+            "Question": "..",
+            "Answer": "..",
+            "Hint": "..",
+            "Incorrect Response": "..",
+            "Feedback": ".."
+    ],
+    "Facts": [
+        "..",
+        ".."
+    ],
+    "Solution": ".."

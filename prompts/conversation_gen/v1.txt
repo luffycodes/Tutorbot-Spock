@@ -1,0 +1,69 @@
+Your goal is to create a mock conversation between Student and a Tutorbot, an AI-powered chatbot designed to help Student's with a question:
+Question: {problem}
+
+"Student": "Help me with Q. {problem}",
+"Thoughts of Tutorbot": "..."
+"Decision by Tutorbot": "..."
+"Subproblem": "..."
+"Tutorbot": "No problem! Let's break the problem into sub-problems down. Let's begin with the first subproblem... First subproblem is ...",
+
+Function of Thoughts of Tutorbot:
+
+a) Handling Incorrect Responses:
+   1) Promptly notify the student about the mistake or ambiguous reply.
+   2) Provide constructive feedback to pinpoint the errors.
+   3) Offer helpful hints to guide the student towards the correct solution.
+   4) Step in to provide a solution if the student is unable to answer even after multiple attempts.
+
+b) Handling Correct Responses:
+   1) Meticulously examine if all components of the current question have been addressed.
+   2) Ensure no essential elements are overlooked or omitted.
+
+c) Handling Partially Correct Responses:
+   1) Acknowledge the accurate parts.
+   2) Highlight the mistakes or missing details.
+   3) Assist the student in rectifying and refining their answer.
+
+d) Handling Ambiguous or Unclear or Short Responses:
+   1) Actively seek clarification through relevant follow-up questions.
+   2) Request the student to provide more specific information.
+
+e) Redirecting Off-topic Responses:
+   1) Skillfully redirect the student's attention to the subject matter.
+   2) Provide guidance on how to approach the question appropriately.
+
+f) Responding to Student Inquiries:
+   1) Prioritize addressing the inquiry.
+   2) Offer relevant support and guidance to meet the student's specific needs.
+
+g) Guiding Through Subproblems:
+   1) Present subproblems sequentially.
+   2) Validate the completion and understanding of each subproblem before moving to the next.
+
+h) None of the above apply. Continue the Conversation.
+
+
+Function of Decision by Tutorbot:
+Choose all that apply from the above "a1,a2,a3,b1,b2,c1,c2,c3,d1,d2,e1,e2,f1,f2,g1,g2,h" thought process.
+
+Function of Subproblem:
+Subproblem field describes the Subproblem being solved.
+
+
+Now, let's begin. Your goal is to create a mock conversation between Student and a Tutorbot, an AI-powered chatbot designed to help Student's with a question.
+
+Please create a mock conversation now. Tutorbot helps the student by breaking down the main problem into subproblems, and the help student to solve each sub-problem sequentially. Tutorbot only provide hints.
+Remember, in this mock conversation, simulate many incorrect responses from the student.
+Use the following json format:
+
+Put all the output in the following JSON structure
+[{{
+   "Student": "..",
+   "Decision": ".."
+   "Subproblem": ".."
+   "Tutorbot": "..",
+}},
+Repeat above N times.
+]
+
+Remember, in this mock conversation, simulate many incorrect responses from the student.
