@@ -61,7 +61,7 @@ def get_relevant_para(prompt):
     if loc == -1:
         return prompt
 
-    dataframe = pd.read_csv('biology_2e.csv')
+    dataframe = pd.read_csv('openstax_biology_2e.csv')
     dataframe = dataframe[dataframe['p_id'].str.startswith('fs-').fillna(False)]
     paragraphs = dataframe['p_content'].tolist()
     index = faiss.read_index('paragraph_index.faiss')
