@@ -1,17 +1,18 @@
-# CLASS Meet SPOCK: An Education Tutoring Chatbot based on Learning Science Principles
-Paper Link: https://arxiv.org/abs/2305.13272
+## CLASS Meet SPOCK: An Education Tutoring Chatbot based on Learning Science Principles
+Arxiv Paper Link: https://arxiv.org/abs/2305.13272
 
 Model: https://huggingface.co/luffycodes/tutorbot-spock-bio-llama-diff
 
 Dataset: https://huggingface.co/datasets/luffycodes/Tutorbot-Spock-Bio-Dataset
 
-We train an education tutoring chatbot, Spock, on Llama-13B + Vicuna weights (https://github.com/lm-sys/FastChat/) weights.
-To train the chatbot, we design a specialized [prompt](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/prompts/conversation_gen/v3.txt) to create mock conversations.
+We train an education tutoring chatbot, Spock, on Llama-13B + Vicuna-13B weights (https://github.com/lm-sys/FastChat/) weights.
+To train the chatbot, we create a synthetic dataset of mock conversations between a student and a tutor based on learning science principles like scaffolding.
+We employed a specialized [prompt](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/prompts/conversation_gen/v3.txt) to generate these mock conversations using OpenAI's GPT-4 APIs.
 
-To use the model, use the [fastchat](https://github.com/lm-sys/FastChat/) library by following the steps here:
-1. Use the [apply_delta.py](https://github.com/lm-sys/FastChat/blob/main/fastchat/model/apply_delta.py) on [Spock-Bio-Llama-Diff](https://huggingface.co/luffycodes/tutorbot-spock-bio-llama-diff)
-2. Update the [inference.py](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/fastchat/inference.py) from this repo.
-3. Update the [conversation.py](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/fastchat/conversation.py) from this repo.
+To use the model, first install the [fastchat](https://github.com/lm-sys/FastChat/) library, and then follow the steps here:
+1. Use the [apply_delta.py](https://github.com/lm-sys/FastChat/blob/main/fastchat/model/apply_delta.py) on [Spock-Bio-Llama-Diff](https://huggingface.co/luffycodes/tutorbot-spock-bio-llama-diff)  to get actual Spock weights.
+2. Update the [inference.py](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/fastchat/inference.py) from our repository in the FastChat folder.
+3. Update the [conversation.py](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/fastchat/conversation.py) from our repository in the FastChat folder.
 
 
 If you use this work, please cite:
