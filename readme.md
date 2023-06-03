@@ -13,10 +13,10 @@ We employed a specialized [prompt](https://github.com/luffycodes/Tutorbot-Spock-
 To use the model, first install the [fastchat](https://github.com/lm-sys/FastChat/) library, and then follow the steps here:
 1. Use the [apply_delta.py](https://github.com/lm-sys/FastChat/blob/main/fastchat/model/apply_delta.py) on [Spock-Bio-Llama-Diff](https://huggingface.co/luffycodes/tutorbot-spock-bio-llama-diff)  to get actual Spock weights.
       - Example: ```python3 -m fastchat.model.apply_delta  --base decapoda-research/llama-13b-hf --target tutorbot_spock_vicuna_prompt_v3  --delta luffycodes/tutorbot-spock-bio-llama-diff```
-      - Also, please put ```vicuna``` in the target model name since ```inference.py``` and ```conversation.py``` check if ```vicuna``` is a substring in the name and change inference and conversation prompts accordingly
-2. Update the [inference.py](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/fastchat/inference.py) from our repository in the FastChat folder.
-3. Update the [conversation.py](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/fastchat/conversation.py) from our repository in the FastChat folder.
-4. Build a [biology index](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/book_index_retrieval/build_index.py) with [OpenStax Biology 2e](https://openstax.org/details/books/biology-2e) textbook. Put the generated ```os_bio_2e_index.faiss``` and the [openstax_biology_2e.csv](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/book_index_retrieval/openstax_biology_2e.csv)  in same folder as inference.py i.e. ```FastChat/fastchat``` folder.
+      - Also, please put ```vicuna``` in the target model name since ```conversation.py``` and ```inference.py``` check if ```vicuna``` is a substring in the name and change conversation starter and inference prompts accordingly
+2. Update the [conversation.py](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/fastchat/conversation.py) from our repository in the FastChat folder.
+3. Update the [inference.py](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/fastchat/inference.py) from our repository in the FastChat folder.
+5. Build a [biology index](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/book_index_retrieval/build_index.py) with [OpenStax Biology 2e](https://openstax.org/details/books/biology-2e) textbook. Put the generated ```os_bio_2e_index.faiss``` and the [openstax_biology_2e.csv](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/book_index_retrieval/openstax_biology_2e.csv)  in same folder as inference.py i.e. ```FastChat/fastchat``` folder.
 
 ### Training
 1. Run the [create_dataset_spock.py](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/fastchat/training/create_dataset_spock.py) to create the training dataset with mock conversations in FastChat Vicuna format.
