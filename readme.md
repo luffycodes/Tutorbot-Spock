@@ -18,11 +18,12 @@ To use the model, first install the [fastchat](https://github.com/lm-sys/FastCha
       - Also, please put ```vicuna``` in the target model name since ```conversation.py``` and ```inference.py``` check if ```vicuna``` is a substring in a model name and change conversation starter and inference prompts respectively. Note we modify ```vicuna``` prompts so you would not able to able to use original ```vicuna``` models unless you revert back changes to ```conversation.py``` and ```inference.py```.
 4. Build a [biology index](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/book_index_retrieval/build_index.py) with [OpenStax Biology 2e](https://openstax.org/details/books/biology-2e) textbook. Put the generated ```os_bio_2e_index.faiss``` and the [openstax_biology_2e.csv](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/book_index_retrieval/openstax_biology_2e.csv)  in same folder as inference.py i.e. ```FastChat/fastchat``` folder.
 
-### Creating synthetic datasets
+### Creating synthetic conversation and scaffolding datasets to train Spock for subjects other than Biology
 #### Example of generating conversational dataset using GPT
 1. Run the [mock_con_GPTx_prompt_v3.py](https://github.com/luffycodes/Tutorbot-Spock/blob/main/gptx_datagen/mock_con_GPTx_prompt_v3.py)
       - It uses [conversation prompt v3](https://github.com/luffycodes/Tutorbot-Spock/blob/main/prompts/conversation_gen/v3.txt)
 2. Remember to put [openai.organization](https://github.com/luffycodes/Tutorbot-Spock/blob/main/gptx_datagen/mock_con_GPTx_prompt_v3.py#L129) and [openai.api_key](https://github.com/luffycodes/Tutorbot-Spock/blob/main/gptx_datagen/mock_con_GPTx_prompt_v3.py#L130) in the file
+3. To create a scaffolding dataset, use prompts in [folder](https://github.com/luffycodes/Tutorbot-Spock/tree/main/prompts/problem_gen)
 
 ### Training
 1. Run the [create_dataset_spock.py](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/fastchat/training/create_dataset_spock.py) to create the training dataset with mock conversations in FastChat Vicuna format.
