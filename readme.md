@@ -1,6 +1,7 @@
 ## CLASS Meet SPOCK: An Education Tutoring Chatbot based on Learning Science Principles (Accepted at EMNLP 2023)
-Follow up work: [Pedagogical Alignment of Large Language Models](https://arxiv.org/abs/2402.05000)
 Arxiv Paper Link: https://arxiv.org/abs/2305.13272
+
+Follow up work: [Pedagogical Alignment of Large Language Models](https://arxiv.org/abs/2402.05000)
 
 Model: https://huggingface.co/luffycodes/tutorbot-spock-bio-llama-diff
 
