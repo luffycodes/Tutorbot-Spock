@@ -3,9 +3,7 @@ Arxiv Paper Link: https://arxiv.org/abs/2305.13272
 
 Follow up work: [Pedagogical Alignment of Large Language Models](https://arxiv.org/abs/2402.05000)
 
-Model: https://huggingface.co/luffycodes/tutorbot-spock-bio-llama-diff
-
-Dataset: https://huggingface.co/datasets/luffycodes/Tutorbot-Spock-Bio-Dataset
+Please find the CLASS slides [here](https://docs.google.com/presentation/d/1_chJlZOKrsYebXJ69-lt6dsiVZ7q_AOrfnYgqNSVRIE/edit?usp=sharing).
 
 We train an education tutoring chatbot, Spock, on Llama-13B + Vicuna-13B weights (https://github.com/lm-sys/FastChat/) weights.
 To train the chatbot, we create a synthetic dataset of mock conversations between a student and a tutor based on learning science principles like scaffolding.
