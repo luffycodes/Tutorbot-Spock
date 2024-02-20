@@ -95,7 +95,7 @@ if __name__ == "__main__":
             device_map="auto",
             cache_dir=args.cache_dir
         )
-        tokenizer = AutoTokenizer.from_pretrained(model_path, cache_dir=args.cache_dir)
+        tokenizer = AutoTokenizer.from_pretrained(args.model_path, cache_dir=args.cache_dir)
     else:
         peft_config = PeftConfig.from_json_file(os.path.join(args.model_path, 'adapter_config.json'))
         model = AutoModelForCausalLM.from_pretrained(
@@ -126,7 +126,7 @@ if __name__ == "__main__":
         
     print("Start generating responses...")
     
-    for i,test in enumerate(test_dataset):
+    for i, test in enumerate(test_dataset):
         print(f"Testing prompt {i}...")
         prompt = test["prompt"]
         response_json = spock(model, tokenizer, prompt)

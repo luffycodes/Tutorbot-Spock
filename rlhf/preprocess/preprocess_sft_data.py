@@ -136,15 +136,93 @@ def store(data, data_file):
     with open(data_file, 'w') as json_file:
         json.dump(data, json_file)
 
+def format_conversation(conversation):
+    formatted_conversation = list()
+    
+    for row in conversation:
+        role = row["from"]
+        if role == "human":
+            role = "user"
+        elif role == "gpt":
+            role = "assistant"
+        else:
+            exit("Unidentifiable role!")
+            
+        content = row["value"]
+        
+        formatted_conversation.append({
+            "role":role,
+            "content":content,
+        })
+        
+    return formatted_conversation
+    
+def create_datasets(data_file_path):
+
+    with open(data_file_path, 'r') as file:
+        data = json.load(file)
+    
+    dataset = list()
+    for row in data:
+        formatted_conversation = format_conversation(row["conversations"])
+
+        dataset.append(formatted_conversation)
+
+    return dataset
+
+def filter_conversations(valid_set):
+    return [sample for sample in valid_set if len(sample) != 2]
+
+def concat(conversation):
+    global roles
+    
+    result = conversation[0]["content"]
+    result += '\n'
+    
+    i = 1
+    for row in conversation[1:]:
+        result += roles[i] + ' ' + row["content"] + '\n'
+        
+        i = (i + 1) % 2
+    
+    return result
+
+def format_dpo(valid_set):
+    global roles
+    
+    data = {"prompt":list(), "chosen":list()}
+    
+    for conversation in valid_set:
+        for i in range(0, len(conversation), 2):
+            prompt = conversation[:i+1]
+
+            templated_prompt = concat(prompt) + roles[1] + ' '
+    
+            chosen = conversation[i+1]["content"]
+            
+            data["prompt"].append(templated_prompt)
+            data["chosen"].append(chosen)
+    return data
+
+def convert_dpo(json_file, output_file_path):
+    train_set = create_datasets(json_file)
+    filtered_set = filter_conversations(train_set)
+    
+    data = format_dpo(filtered_set)
+    
+    with open(output_file_path, 'w') as output_file:
+        json.dump(data, output_file)
+    
 if __name__ == "__main__":
+    # Preprocess SFT data
     random.seed(42)
     
     num_sft_train_samples = 200
     num_dpo_train_samples = 200
     num_test_samples = 150
     
-    data_dir = "../datasets/"
-    files = [data_dir + "bio-dataset-1.json", data_dir + "bio-dataset-2.json", data_dir + "bio-dataset-3.json"]
+    data_dir = "../datasets"
+    files = [data_dir + "/bio-dataset-1.json", data_dir + "/bio-dataset-2.json", data_dir + "/bio-dataset-3.json"]
     
     sft_train_file = data_dir + "/bio-sft.json"
     dpo_train_file = data_dir + "/bio-dpo.json"
@@ -160,5 +238,13 @@ if __name__ == "__main__":
     store(sft_data, sft_train_file)
     store(dpo_data, dpo_train_file)
     store(test_data, test_file)
+
+    # Convert data into DPO formats
+    test_file_formatted = data_dir + "/bio-test_formatted.json"
+    dpo_train_file_formatted = data_dir + "/bio-dpo_formatted.json"
+    
+    roles = ["Student:", "Tutorbot:"]
+    convert_dpo(dpo_train_file, dpo_train_file_formatted)
+    convert_dpo(test_file, test_file_formatted)
 
     print("Done preprocessing.")

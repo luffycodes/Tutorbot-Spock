@@ -32,7 +32,7 @@ def parse_args():
     
     parser.add_argument("--loss", type=str, required=True, help="The type of loss function to use.")
     parser.add_argument("--use_lora", action='store_true', default=False, help="Whether to train with LoRA.")
-    parser.add_argument("--learning_rate", type=float, default=None, help="Learning rate (will be adjusted based on --use_lora flag if not specified).")
+    parser.add_argument("--learning_rate", type=float, default=1e-7, help="Learning rate.")
     parser.add_argument("--beta", type=float, required=True, help="Beta parameter for DPO training.")
     parser.add_argument("--num_train_epochs", type=int, default=3, help="Number of training epochs.")
     parser.add_argument("--per_device_train_batch_size", type=int, default=1, help="Batch size per device during training.")
