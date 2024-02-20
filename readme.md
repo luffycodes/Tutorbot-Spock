@@ -18,7 +18,7 @@ To use the model, first install the [fastchat](https://github.com/lm-sys/FastCha
       - Also, please put ```vicuna``` in the target model name since ```conversation.py``` and ```inference.py``` check if ```vicuna``` is a substring in a model name and change conversation starter and inference prompts respectively. Note we modify ```vicuna``` prompts so you would not able to able to use original ```vicuna``` models unless you revert back changes to ```conversation.py``` and ```inference.py```.
 4. Build a [biology index](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/book_index_retrieval/build_index.py) with [OpenStax Biology 2e](https://openstax.org/details/books/biology-2e) textbook. Put the generated ```os_bio_2e_index.faiss``` and the [openstax_biology_2e.csv](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/book_index_retrieval/openstax_biology_2e.csv)  in same folder as inference.py i.e. ```FastChat/fastchat``` folder.
 
-To use the RLHF model instead, download the weights from Hugging Face. A few options are
+To use the RLHF model instead, download the weights from Hugging Face:
 - [mistral-7b-instruct-v0.2-class-bio-tutor-dpo](https://huggingface.co/kangqi-ni/mistral-7b-instruct-v0.2-class-bio-tutor-dpo)
 - [zephyr-7b-beta-class-bio-tutor-dpo](https://huggingface.co/kangqi-ni/zephyr-7b-beta-class-bio-tutor-dpo)
 - [vicuna-7b-v1.5-class-bio-tutor-dpo](https://huggingface.co/kangqi-ni/vicuna-7b-v1.5-class-bio-tutor-dpo)
@@ -39,8 +39,8 @@ The RLHF subfolder includes the follow-up work in [Pedagogical Alignment of Larg
 To run the entire pipeline of data preprocessing, sft, rlhf, and evaluating, download FastChat into the root folder and simply run ```./run.sh``` within the rlhf folder. Replace the MODEL_NAME or ALGO variables within the script to try out other types of models or rlhf algorithms. 
 
 If you use this work, please cite: <br>
-[CLASS Meet SPOCK: An Education Tutoring Chatbot based on Learning Science Principles](https://arxiv.org/abs/2305.13272) <br>
-[Pedagogical Alignment of Large Language Models](https://arxiv.org/abs/2402.05000) <br>
+- [CLASS Meet SPOCK: An Education Tutoring Chatbot based on Learning Science Principles](https://arxiv.org/abs/2305.13272) <br>
+- [Pedagogical Alignment of Large Language Models](https://arxiv.org/abs/2402.05000) <br>
 
 ```
 @misc{sonkar2023class,
