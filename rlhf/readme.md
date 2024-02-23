@@ -69,7 +69,7 @@ python preprocess/preprocess_dpo_data.py --response_file ${SFT_MODEL_PATH}/final
 ```
 
 #### RLHF
-Install the [TRL](https://github.com/huggingface/trl)library, to perform RLHF on the SFT model.
+Install the [TRL](https://github.com/huggingface/trl) library, to perform RLHF on the SFT model.
 ```
 FULL_MODEL_PATH="mistralai/Mistral-7B-Instruct-v0.2"
 DATA_DIR="../datasets"
