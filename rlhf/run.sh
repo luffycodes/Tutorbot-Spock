@@ -18,10 +18,10 @@ python preprocess/preprocess_sft_data.py
 mkdir -p spock_bio
 SFT_MODEL_PATH="spock_bio/spock_bio_${MODEL_NAME}"
 
-CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --nproc_per_node=4 --master_port=20001 ../FastChat/fastchat/train/train.py \
+deepspeed --include localhost:0,1,2,3 --master_port=20001 ../FastChat/fastchat/train/train.py \
     --model_name_or_path $FULL_MODEL_PATH \
     --data_path $SFT_DATASET_PATH \
-    --eval_data_path $TEST_DATASET_PATH \
+    --eval_data_path ${DATA_DIR}/bio-test.json \
     --output_dir $SFT_MODEL_PATH \
     --cache_dir cache \
     --bf16 True \
@@ -38,13 +38,12 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --nproc_per_node=4 --master_port=20001 ../
     --warmup_ratio 0.1 \
     --lr_scheduler_type "cosine" \
     --logging_steps 1 \
-    --fsdp "full_shard auto_wrap" \
-    --fsdp_transformer_layer_cls_to_wrap $FSDP_CLASS \
     --tf32 True \
     --model_max_length 4096 \
-    --gradient_checkpointing True
+    --gradient_checkpointing True \
+    --deepspeed ../FastChat/playground/deepspeed_config_s3.json
 
-# Generate responses from the SFT models
+# Generate responses from the SFT model
 CUDA_VISIBLE_DEVICES=0 python evaluate/generate_responses.py --model_path $SFT_MODEL_PATH --output_dir ${SFT_MODEL_PATH}/final_checkpoint-eval --test_dataset_path $TEST_DATASET_PATH
 
 CUDA_VISIBLE_DEVICES=0 python evaluate/generate_responses.py --model_path $SFT_MODEL_PATH --output_dir ${SFT_MODEL_PATH}/final_checkpoint-dpo --test_dataset_path $DPO_DATASET_PATH
