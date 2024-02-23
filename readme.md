@@ -1,7 +1,7 @@
 ## CLASS Meet SPOCK: An Education Tutoring Chatbot based on Learning Science Principles (Accepted at EMNLP 2023)
-To read about more details, please refer to the arxiv paper: https://arxiv.org/abs/2305.13272
-For more related informationn, find the CLASS slides [here](https://docs.google.com/presentation/d/1_chJlZOKrsYebXJ69-lt6dsiVZ7q_AOrfnYgqNSVRIE/edit?usp=sharing).
-To read about the follow-up work, refer to [Pedagogical Alignment of Large Language Models](https://arxiv.org/abs/2402.05000)
+To read about more details, please refer to the arxiv paper: https://arxiv.org/abs/2305.13272 <br>
+For more related informationn, find the CLASS slides [here](https://docs.google.com/presentation/d/1_chJlZOKrsYebXJ69-lt6dsiVZ7q_AOrfnYgqNSVRIE/edit?usp=sharing). <br>
+To read about the follow-up work, refer to [Pedagogical Alignment of Large Language Models](https://arxiv.org/abs/2402.05000) <br>
 
 ### Overview
 We aim to develop more effective educational tutoring chatbots (Spock) that help students deepen their understanding of academic subjects.
@@ -18,11 +18,12 @@ To use the models, first install the [fastchat](https://github.com/lm-sys/FastCh
       - Also, please put ```vicuna``` in the target model name since ```conversation.py``` and ```inference.py``` check if ```vicuna``` is a substring in a model name and change conversation starter and inference prompts respectively. Note we modify ```vicuna``` prompts so you would not able to able to use original ```vicuna``` models unless you revert back changes to ```conversation.py``` and ```inference.py```.
 4. Build a [biology index](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/book_index_retrieval/build_index.py) with [OpenStax Biology 2e](https://openstax.org/details/books/biology-2e) textbook. Put the generated ```os_bio_2e_index.faiss``` and the [openstax_biology_2e.csv](https://github.com/luffycodes/Tutorbot-Spock-Bio/blob/main/book_index_retrieval/openstax_biology_2e.csv)  in same folder as inference.py i.e. ```FastChat/fastchat``` folder.
 
-For easier access of the models, download them directly from Hugging Face instead of Step 3.
+For easier access of the models, download them directly from Hugging Face. <br>
 SFT Models:
 - [mistral-7b-instruct-v0.2-class-bio-tutor-sft](https://huggingface.co/kangqi-ni/mistral-7b-instruct-v0.2-class-bio-tutor-sft)
 - [zephyr-7b-beta-class-bio-tutor-sft](https://huggingface.co/kangqi-ni/zephyr-7b-beta-class-bio-tutor-sft)
 - [vicuna-7b-v1.5-class-bio-tutor-sft](https://huggingface.co/kangqi-ni/vicuna-7b-v1.5-class-bio-tutor-sft)
+
 SFT + DPO Models:
 - [mistral-7b-instruct-v0.2-class-bio-tutor-dpo](https://huggingface.co/kangqi-ni/mistral-7b-instruct-v0.2-class-bio-tutor-dpo)
 - [zephyr-7b-beta-class-bio-tutor-dpo](https://huggingface.co/kangqi-ni/zephyr-7b-beta-class-bio-tutor-dpo)
