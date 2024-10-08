@@ -26,7 +26,7 @@ This repo aims to develop effective intelligent tutoring agents that help studen
 
 ## Usage
 Please refer to `scripts/run.sh` as an example, which runs the training and evaluation of a selected model using 4*A100 GPUs. To run this example without training, download the models from the section below and refer to `scripts/run_no-train.sh`. 
-The following subsections break down scripts/run.sh with more detailed explanations.
+The following subsections break down `scripts/run.sh` with more detailed explanations.
 
 ### Datasets
 The training and evaluation use bio-dataset-1.json, bio-dataset-2.json, bio-dataset-3.json, and bio-dataset-ppl.json from the datasets folder.
