@@ -1,8 +1,6 @@
 ## CLASS Meet SPOCK: An Education Tutoring Chatbot based on Learning Science Principles (Accepted at EMNLP 2023)
 Arxiv Paper Link: https://arxiv.org/abs/2305.13272
 
-Follow up work: [Pedagogical Alignment of Large Language Models](https://arxiv.org/abs/2402.05000)
-
 Please find the CLASS slides [here](https://docs.google.com/presentation/d/1_chJlZOKrsYebXJ69-lt6dsiVZ7q_AOrfnYgqNSVRIE/edit?usp=sharing).
 
 We train an education tutoring chatbot, Spock, on Llama-13B + Vicuna-13B weights (https://github.com/lm-sys/FastChat/) weights.
