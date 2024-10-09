@@ -169,6 +169,9 @@ Aligned Models:
 - [Llama-3.1-8B-Instruct_bio-tutor_dpo](https://huggingface.co/kangqi-ni/Llama-3.1-8B-Instruct_bio-tutor_dpo)
 - [Mistral-7B-Instruct-v0.2_bio-tutor_dpo](https://huggingface.co/kangqi-ni/Mistral-7B-Instruct-v0.2_bio-tutor_dpo)
 - [zephyr-7b-beta_bio-tutor_dpo](https://huggingface.co/kangqi-ni/zephyr-7b-beta_bio-tutor_dpo)
+- [Llama-3.1-8B-Instruct_bio-tutor_kto](https://huggingface.co/kangqi-ni/Llama-3.1-8B-Instruct_bio-tutor_kto)
+- [Mistral-7B-Instruct-v0.2_bio-tutor_kto](https://huggingface.co/kangqi-ni/Mistral-7B-Instruct-v0.2_bio-tutor_kto)
+- [zephyr-7b-beta_bio-tutor_kto](https://huggingface.co/kangqi-ni/zephyr-7b-beta_bio-tutor_kto)
 
 ## Citation
 If you find our work useful, please cite:
