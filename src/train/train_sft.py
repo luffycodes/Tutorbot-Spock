@@ -24,7 +24,7 @@ def parse_args():
     parser.add_argument("--eval_dataset_path", type=str, required=True, help="Path to the evaluation data.")
     
     parser.add_argument("--output_dir", type=str, required=True, help="Directory to save the trained model and outputs.")
-    parser.add_argument("--cache_dir", type=str, default="/data/kn22/cache", help="Directory to cache the preprocessed datasets and models.")
+    parser.add_argument("--cache_dir", type=str, default="cache", help="Directory to cache the preprocessed datasets and models.")
  
     parser.add_argument("--learning_rate", type=float, default=2e-5, help="Learning rate.")
     parser.add_argument("--num_train_epochs", type=int, default=3, help="Number of training epochs.")
