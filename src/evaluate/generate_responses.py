@@ -18,7 +18,7 @@ def parse_args():
     parser.add_argument('--output_dir', type=str, required=True, help='Path to the output directory')
     parser.add_argument('--test_dataset_path', type=str, required=True, help='Path to the test dataset')
 
-    parser.add_argument("--cache_dir", type=str, default="/data1/kn22/cache", help="Directory to cache the preprocessed datasets and models.")
+    parser.add_argument("--cache_dir", type=str, default="cache", help="Directory to cache the preprocessed datasets and models.")
     parser.add_argument("--seed", type=int, default=42, help="Seed for random number generators to ensure reproducibility.")
     parser.add_argument("--batch_size", type=int, required=True, help="Per device batch size for inference.")
     args = parser.parse_args()
