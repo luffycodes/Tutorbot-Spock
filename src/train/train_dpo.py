@@ -26,7 +26,7 @@ def parse_args():
     parser.add_argument("--model_path", type=str, required=True, help="Model identifier for the pretrained model.")
     parser.add_argument("--train_dataset_path", type=str, required=True, help="Path to the training data.")
     parser.add_argument("--output_dir", type=str, required=True, help="Directory to save the trained model and outputs.")
-    parser.add_argument("--cache_dir", type=str, default="/data/kn22/cache", help="Directory to cache the preprocessed datasets and models.")
+    parser.add_argument("--cache_dir", type=str, default="cache", help="Directory to cache the preprocessed datasets and models.")
     
     parser.add_argument("--loss", type=str, required=True, help="The type of RL algorithm to use.", choices=["dpo", "ipo", "kto", "rso", "cdpo"])
     parser.add_argument("--learning_rate", type=float, default=1e-7, help="Learning rate.")
