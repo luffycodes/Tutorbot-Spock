@@ -11,7 +11,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Parse command line arguments for the script.")
 
     parser.add_argument('--model_path', type=str, required=True, help="Path to the model file")
-    parser.add_argument('--cache_dir', type=str, default="/data1/kn22/cache", help="Path to the model file")
+    parser.add_argument('--cache_dir', type=str, default="cache", help="Path to the model file")
     parser.add_argument('--ppl_dataset_path', type=str, default="datasets/bio-dataset-ppl.json", help="Path to the alternative dataset")
 
     args = parser.parse_args()
